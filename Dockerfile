@@ -38,7 +38,7 @@ RUN mkdir -p bootstrap/cache storage/app storage/framework/cache/data \
 RUN composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist --no-scripts
 
 # Node files (cache for Vite build)
-COPY package.json yarn.lock ./
+COPY package.json ./
 RUN yarn install --frozen-lockfile
 
 # Copy the rest of the project files
